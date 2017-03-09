@@ -30,7 +30,7 @@ void thread_function2(int i,Channel<int> *chan) {
 
 int main () {
 
-	Channel<int> *chan = new Channel<int>;
+	Channel<int> chan;
 
 	int total_threads = 10;
 
@@ -45,11 +45,11 @@ int main () {
 	// ##### Section 1
 	// CHANNEL TEST: Normal working of channel
 	// for(int j=0; j<total_threads; j++){
-	// 	thread_array[j] = thread(thread_function,j,chan);
+	// 	thread_array[j] = thread(thread_function,j,&chan);
 	// }
 	
 	// for(int j=0; j<t; j++) {
-	// 	arr[chan->retrieve(&closed)]++;
+	// 	arr[chan.retrieve(&closed)]++;
 	// }
 
 	// for(int j=0; j<total_threads; j++){
@@ -62,6 +62,7 @@ int main () {
 	// 	assert(arr[j]==N);
 	// 	arr[j] = 0;
 	// }
+	// cout << endl;
 	// #####
 
 
@@ -71,10 +72,10 @@ int main () {
 	// 	arr[j] = 0;
 	// }
 	// for(int j=0; j<total_threads; j++){
-	// 	thread_array[j] = thread(thread_function2,j,chan);
+	// 	thread_array[j] = thread(thread_function2,j,&chan);
 	// }
 
-	// for(int j=chan->retrieve(&closed); !closed ; j=chan->retrieve(&closed)) {
+	// for(int j=chan.retrieve(&closed); !closed ; j=chan.retrieve(&closed)) {
 	// 	arr[j]++;
 	// }
 
@@ -86,7 +87,7 @@ int main () {
 	// 	cout << arr[j] << endl;
 	// }
 
-	// assert(chan->buffer_size()==0);
+	// assert(chan.buffer_size()==0);
 	// #####
 
 	cout << "Channel test is over" << endl;
