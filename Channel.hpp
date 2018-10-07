@@ -1,6 +1,6 @@
 /*
-* Author: @thecodesome (https://github.com/thecodesome)
-* Github: https://github.com/thecodesome/go-channel-in-cpp
+* Author: @codesome (https://github.com/codesome)
+* Github: https://github.com/codesome/go-channel-in-cpp
 **/
 
 #ifndef __CHANNEL_HPP__
